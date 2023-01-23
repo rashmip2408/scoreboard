@@ -1,44 +1,72 @@
-let count = 12;
-let countEl = document.getElementById('count');
-let countIn = document.getElementsByClassName('count-in');
+let homeScore = 0;
+let guestScore = 0;
+
+document.getElementById('home-el').textContent = homeScore;
+document.getElementById('guest-el').textContent = guestScore;
+
+let totalHome = document.getElementById('home-el');
+let totalGuest = document.getElementById('guest-el');
 
 
+//scores for home element
 
-function incrementC() {
-    count += 1;
-    countEl.textContent = count;
-    console.log(count);
+function scoreOneHome() {
+    homeScore += 1;
+    totalHome.textContent = homeScore;
 }
 
-function incrementTwo() {
-    count += 2;
-    countEl.textContent = count;
-
-}
-function incrementThree() {
-    count += 3;
-    countEl.textContent = count;
-
+function scoreTwoHome() {
+    homeScore += 2;
+    totalHome.textContent = homeScore;
 }
 
-let guestCount = 5;
-let guestEl = document.getElementById('guestCount');
-let guestIn = document.getElementById('guest-in');
-
-function incrementG() {
-    guestCount += 1;
-    guestEl.textContent = guestCount;
-
-}
-function incrementTwoo() {
-    guestCount += 2;
-    guestEl.textContent = guestCount;
-
+function scoreThreeHome() {
+    homeScore += 3;
+    totalHome.textContent = homeScore;
 }
 
-function incrementThreee() {
-    guestCount += 3;
-    guestEl.textContent = guestCount;
+//scores for guest element
+
+function scoreOneGuest() {
+    guestScore += 1;
+    totalGuest.textContent = guestScore;
+
+}
+function scoreTwoGuest() {
+    guestScore += 2;
+    totalGuest.textContent = guestScore;
 
 }
 
+function scoreThreeGuest() {
+    guestScore += 3;
+    totalGuest.textContent = guestScore;
+}
+
+//start new game
+
+function startGame() {
+    homeScore = 0;
+    totalHome.textContent = homeScore;
+    guestScore = 0;
+    totalGuest.textContent = guestScore;
+    wonMsg.textContent = '';
+}
+
+
+//end game
+
+let wonMsg = document.getElementById('won-msg');
+
+function gameOver() {
+    if (homeScore > guestScore) {
+        wonMsg.textContent = "GAME OVER! HOME TEAM WON🎉"
+        console.log('home team won!');
+    } else if (homeScore < guestScore) {
+        wonMsg.textContent = "GAME OVER! Guest TEAM WON🎉"
+        console.log('guest team won!');
+    } else {
+        wonMsg.textContent = "GAME OVER! TIE"
+        console.log('wonMsg');
+    }
+}
