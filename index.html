@@ -6,36 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Scoreboard</title>
+
+    <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="./basketball.png">
+
+    <!-- stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome -->
     <script src="https://kit.fontawesome.com/ceceef449c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <span id="title">Basketball<i class='fas fa-basketball-ball' style='font-size:48px;'></i><a
             href="https://github.com/rashmip2408" data-replace="Scoreboard" target="_blank"><span>Scoreboard</span></a>
     </span>
+
     <section class="card">
         <div class="row">
             <h2>HOME</h2>
-            <button id="count" class="btn-bg">12</button>
+            <button id="home-el" class="btn-bg">0</button>
             <div class="btn2">
-                <button class="btn-sm count-in" onclick="incrementC()">+1</button>
-                <button class="btn-sm count-in" onclick="incrementTwo()">+2</button>
-                <button class="btn-sm count-in" onclick="incrementThree()">+3</button>
+                <button class="btn-sm" onclick="scoreOneHome()">+1</button>
+                <button class="btn-sm" onclick="scoreTwoHome()">+2</button>
+                <button class="btn-sm" onclick="scoreThreeHome()">+3</button>
             </div>
         </div>
 
         <div class="row">
             <h2>GUEST</h2>
-            <button id='guestCount' class="btn-bg">5</button>
+            <button id='guest-el' class="btn-bg">0</button>
             <div class="btn2">
-                <button class="btn-sm guest-in" onclick="incrementG()">+1</button>
-                <button class="btn-sm guest-in" onclick="incrementTwoo()">+2</button>
-                <button class="btn-sm guest-in" onclick="incrementThreee()">+3</button>
+                <button class="btn-sm" onclick="scoreOneGuest()">+1</button>
+                <button class="btn-sm" onclick="scoreTwoGuest()">+2</button>
+                <button class="btn-sm" onclick="scoreThreeGuest()">+3</button>
             </div>
         </div>
     </section>
+
+    <span class="btn-section">
+        <button id="start-game" onclick="startGame()">Start New Game</button>
+        <button id="game-over" onclick="gameOver()">Game Over</button>
+    </span>
+
+    <div>
+        <p id="won-msg"></p>
+    </div>
 
 
     <footer>Copyright@2023 Made by Rashmi with 💙</footer>
